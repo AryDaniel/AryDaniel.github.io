@@ -1,0 +1,133 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/*El fondo*/
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #90E0EF;
+}
+::selection{
+  background: #90E0EF;
+  color: #fff;
+}
+/* Subcuadro principal*/
+.container{
+  max-width: 1100px;
+  width: 100%;
+  padding: 40px 50px  40px  40px;
+  background: #CAF0F8;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .topic{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .list{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 50px;
+  position: relative;
+}
+.content .list label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+/* Letras del indice - seleccionada*/
+#practica1:checked ~ .list label.practica1,
+#practica2:checked ~ .list label.practica2,
+#practica3:checked ~ .list label.practica3,
+#practica4:checked ~ .list label.practica4,
+#practica5:checked ~ .list label.practica5{
+  color: #00B4D8;
+}
+
+/* Letras del indice - sin seleccionar*/
+.content .list label:hover{
+  color: #00B4D8;
+}
+
+/* Indice seleccionado */
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #03045E;
+  transition: all 0.4s ease;
+  
+}
+#practica1:checked ~ .list .slider{
+  top: 0;
+}
+#practica2:checked ~ .list .slider{
+  top: 60px;
+}
+#practica3:checked ~ .list .slider{
+  top: 120px;
+}
+#practica4:checked ~ .list .slider{
+  top: 180px;
+}
+#practica5:checked ~ .list .slider{
+  top: 240px;
+}
+.content .text-content{
+  width: 80%;
+  height: 100%;
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.content .text p{
+  text-align: justify;
+}
+.content .text-content .practica1{
+  display: block;
+}
+#practica1:checked ~ .text-content .practica1,
+#practica2:checked ~ .text-content .practica2,
+#practica3:checked ~ .text-content .practica3,
+#practica4:checked ~ .text-content .practica4,
+#practica5:checked ~ .text-content .practica5{
+  display: block;
+}
+#practica2:checked ~ .text-content .practica1,
+#practica3:checked ~ .text-content .practica1,
+#practica4:checked ~ .text-content .practica1,
+#practica5:checked ~ .text-content .practica1{
+  display: none;
+}
+.content input{
+  display: none;
+}
